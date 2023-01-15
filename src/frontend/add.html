@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add pattern</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='./css/sm-core-css.css' rel='stylesheet'>
+    <link href='./css/sm-simple/sm-simple.css' rel='stylesheet'>
+    <link href="https://code.jquery.com/ui/1.13.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- <script src="./libs/jquery/jquery.js"></script>-->
+    <script src="jquery.smartmenus.js"></script>
+    <!-- <script src="node_modules/jquery/dist/jquery.js"></script> -->
+    <script src="node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="addScript.js"></script>
+
+</head>
+<body>
+<nav class="main-nav">
+
+    <!-- Mobile menu toggle button (hamburger/x icon) -->
+    <input id="main-menu-state" type="checkbox">
+    <label class="main-menu-btn" for="main-menu-state">
+        <span class="main-menu-btn-icon"></span> Toggle main menu visibility
+    </label>
+
+    <h2 class="nav-brand"><a href="#">The Fly Pattern Lib</a></h2>
+
+    <!-- menu definition -->
+    <ul id="main-menu" class="sm sm-simple">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search Pattern</a></li>
+        <li><a href="list.html">Pattern List</a></li>
+        <li><a href="#">Add Pattern</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+</nav>
+
+<div id="addPatternTab">
+    <form action="#" id="addForm">
+
+        <fieldset>
+            <label for="patternName">Write name of pattern</label>
+            <input type="text" name="patternName" id="patternName">
+            <p>Type of fly:</p>
+            <label for="wetFly">Wet fly</label>
+            <input type="radio" id="wetFly" name="typeFly" value="wetFly">
+
+            <label for="dryFly">Dry fly</label>
+            <input type="radio" id="dryFly" name="typeFly" value="dryFly">
+
+            <label for="streamer">Streamer</label>
+            <input type="radio" id="streamer" name="typeFly" value="streamer">
+
+            <label for="salmonFly">Salmon fly</label>
+            <input type="radio" id="salmonFly" name="typeFly" value="salmonFly">
+
+            <label for="nymph">Nymph</label>
+            <input type="radio" id="nymph" name="typeFly" value="nymph">
+
+
+            <label for="otherFly" id="otherFlyLabel">Please write the type of fly: </label>
+            <input type="text" id="otherFly">
+
+            <label for="hookSize">Select hook size</label>
+            <select name="hookSize" id="hookSize">
+                <option>2</option>
+                <option >4</option>
+                <option>6</option>
+                <option>8</option>
+                <option>10</option>
+                <option>12</option>
+                <option selected="selected">14</option>
+                <option>16</option>
+                <option>18</option>
+                <option>20</option>
+                <option>22</option>
+                <option>24</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+            </select>
+            <label for="hookType">Type of hook (optional): </label>
+            <input type="text" id="hookType">
+            <label for="tyingInstruction">Tying instructions</label>
+            <textarea id="tyingInstruction" name="tyingInstruction"></textarea>
+
+            <label>List of materials</label>
+            <div id="patternMaterials">
+                <input type="text" id="material" class="material"><button id="addMaterial" type="button">Add more materials</button>
+            </div>
+            <div id="uploadImage">
+                <h4>Add an image of pattern</h4>
+                <div id="label" class="label">
+                    Click or drag to dotted field to upload a file
+                </div>
+                <div id="field" class="dropArea">
+                    <input type="file" id="fileUpload">
+                </div>
+            </div>
+            <div>
+                <button type="submit" id="submit" name="submit">Submit pattern</button>
+            </div>
+
+
+        </fieldset>
+
+    </form>
+</div>
+
+
+
+</body>
+</html>

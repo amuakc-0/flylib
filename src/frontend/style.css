@@ -1,0 +1,269 @@
+.main-nav {
+    border: 1px solid #bbb;
+    background: rgb(128, 160, 128); 
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 41px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .main-nav:after {
+    clear: both;
+    content: "\00a0";
+    display: block;
+    height: 0;
+    font: 0px/0 serif;
+    overflow: hidden;
+  }
+  
+  .nav-brand {
+    float: left;
+    margin: 0;
+  }
+  
+  .nav-brand a {
+    display: block;
+    padding: 11px 11px 11px 20px;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 17px;
+    text-decoration: none;
+  }
+  
+  #main-menu {
+    clear: both;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  @media (min-width: 768px) {
+    #main-menu {
+      float: right;
+      clear: none;
+    }
+  }
+  
+  
+  /* Mobile menu toggle button */
+  
+  .main-menu-btn {
+    float: right;
+    margin: 5px 10px;
+    position: relative;
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    text-indent: 29px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgb(128, 160, 128);
+  }
+  
+  
+  /* hamburger icon */
+  
+  .main-menu-btn-icon,
+  .main-menu-btn-icon:before,
+  .main-menu-btn-icon:after {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    height: 2px;
+    width: 24px;
+    background: #555;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  
+  .main-menu-btn-icon:before {
+    content: '';
+    top: -7px;
+    left: 0;
+  }
+  
+  .main-menu-btn-icon:after {
+    content: '';
+    top: 7px;
+    left: 0;
+  }
+  
+  
+  /* x icon */
+  
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+    height: 0;
+    background: transparent;
+  }
+  
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  
+  /* hide menu state checkbox (keep it visible to screen readers) */
+  
+  #main-menu-state {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+  
+  
+  /* hide the menu in mobile view */
+  
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: none;
+  }
+  
+  #main-menu-state:checked ~ #main-menu {
+    display: block;
+  }
+  
+  @media (min-width: 768px) {
+    /* hide the button in desktop view */
+    .main-menu-btn {
+      position: absolute;
+      top: -99999px;
+    }
+    /* always show the menu in desktop view */
+    #main-menu-state:not(:checked) ~ #main-menu {
+      display: block;
+    }
+  }
+  
+  
+
+
+  /* * *Form styles   * * */
+  /* * *              * * */
+  #tab-1{
+    font-size: 18px;
+}
+
+/*sets style for header */
+.ui-widget-header {  
+   background:rgb(128, 160, 128);  
+   border: 2px solid rgb(14, 112, 55);  
+   color: brown;
+   
+}  
+
+/*Overrides JQuery UI CSS to change text color of links */
+a {
+    color: green !important;
+
+}
+
+fieldset {
+    border: 0;
+  }
+  label {
+    display: block;
+    margin: 30px 0 0 0;
+  }
+  .overflow {
+    height: 200px;
+  }
+
+  #tyingInstruction {
+    height: 150px;
+    width: 350px;
+  }
+
+  /* Styling of accordion */
+  .panel-body {
+    font-weight: bold;
+  }
+  .panel-body p {
+    font-weight: normal;
+  }
+
+  /* Styling of add input button */
+  #patternMaterials button{
+    float: left;
+  }
+
+    /* Upload function styles */
+    /* style for the drop area, changed by script*/
+#field.dropArea {
+  background-color: white;
+	width: 300px;
+	height: 200px;
+	border-style: dotted;
+	border-color: rgb(128, 160, 128);
+}
+
+
+div.label {
+	width: 306px;
+	height: 50px;
+	background-color:  rgb(128, 160, 128);
+	border-color:  rgb(128, 160, 128);
+	text-align: center;
+	font-weight: bold;
+}
+	
+#field.onMouseover {
+	background-color: aliceblue; 
+	width: 300px;
+	height: 200px;
+	border-style: dotted;
+	border-color: rgb(14, 112, 55);  
+}
+
+#field.onDragEnter {
+	background-color: aliceblue;
+	width: 300px;
+	height: 200px;
+	border-style: dotted;
+	border-color: rgb(14, 112, 55);  
+  opacity: 0.5;
+}
+
+#field.onDragDrop {
+	background-color: aliceblue;
+	width: 300px;
+	height: 200px;
+	border-style: dotted;
+	border-color:rgb(14, 112, 55);  
+
+}
+
+/*Style for input element, makes it invisible */
+#field input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+	
+}
+
+/*focus for input set to none to avoid change when focused with tab button*/
+*#field input:focus {
+    outline: none;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Style for search page */
+#foundPattern::after{
+  content: "\a";
+  white-space: pre
+}
