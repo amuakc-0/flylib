@@ -2,9 +2,16 @@
 $.validator.setDefaults({
     submitHandler: function() {
         //Creating variables from input fields
-        imageToUpload = document.getElementById("fileUpload");
         var patternName = $("#patternName").val();
-        var typeFly = $('[name="typeFly"]:checked').val();
+        var typeFly;
+        //Check if the fly type is other, if yes then set typefly to other
+        if ($('[name="typeFly"]:checked').val() === "other") {
+            typeFly = $('#otherFly').val();
+        }
+        else {
+            typeFly = $('[name="typeFly"]:checked').val();
+        }
+
         var hookSize = $('#hookSize').val();
         var hookType = $('#hookType').val();
         var materialArray = [];
@@ -13,35 +20,43 @@ $.validator.setDefaults({
         }));
         var materials = materialArray.join(", ");
         var instruction = $('#tyingInstruction').val();
-        var image_url = "/images/"+imageToUpload.files[0].name;
+
+
+        //Checking if an image is uploaded, if not set standard image as image_url
+        var myUpload = document.getElementById("fileUpload");
+        //(document.getElementById("uploadBox").value != "")
+        console.log(myUpload);
+        if(myUpload.value == "") {
+            var image_url = "/images/noimage.png";
+        } else {
+            var image_url = "/images/"+myUpload.files[0].name;
+            //Function for upload called on form submit
+            var textLabel = document.getElementById("label");
+            async function uploadFile () {
+                let formData = new FormData();
+                formData.append("file", myUpload.files[0]);
+                let response = await fetch('http://localhost:8080/pattern/upload', {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.status == 200) {
+                    console.log("File successfully uploaded.");
+                }
+
+
+                textLabel.innerHTML = myUpload.files[0].name + " was uploaded!";
+            }
+
+            uploadFile();
+        }
 
         //Creating array with above variables
         var pattern = [patternName, typeFly, hookSize, hookType, materials, instruction, image_url];
 
-        //Upload image
-        var myUpload = document.getElementById("fileUpload");
-        var textLabel = document.getElementById("label");
-
-        //Function for upload called on form submit
-        async function uploadFile () {
-            let formData = new FormData();
-            formData.append("file", myUpload.files[0]);
-            let response = await fetch('http://localhost:8080/pattern/upload', {
-                method: "POST",
-                body: formData
-            });
-
-            if (response.status == 200) {
-                console.log("File successfully uploaded.");
-            }
 
 
-            textLabel.innerHTML = myUpload.files[0].name + " was uploaded!";
-        }
-
-        uploadFile();
-
-        //Send array to DB with ajax
+        //Send array with pattern data to DB
         $.ajax({
             crossDomain: true,
             type: "POST",
@@ -82,6 +97,7 @@ $(document).ready(function() {
     $("#addForm").validate ({
         rules: {
             patternName: "required",
+
         },
         messages: {
             patternName: "Please enter a pattern name",
@@ -100,6 +116,12 @@ $(document).ready(function() {
         radioCheck();
     });
     $('#streamer').click(function() {
+        radioCheck();
+    });
+    $('#salmonFly').click(function() {
+        radioCheck();
+    });
+    $('#nymph').click(function() {
         radioCheck();
     });
     $('#other').click(function() {
@@ -124,7 +146,6 @@ $(document).ready(function() {
         //Variables
     var myUpload = document.getElementById("fileUpload");
     var textLabel = document.getElementById("label");
-
     //Function for printing out file name when droped
     function fileToUpload() {
         var myUpload = document.getElementById("fileUpload");

@@ -19,4 +19,9 @@ public interface PatternRepo extends JpaRepository <Pattern, Long> {
     //Query for searching based on material
     @Query(value = "select * from pattern where material like %:keyword%", nativeQuery = true)
     List<Pattern> findByMaterial(@Param("keyword") String keyword);
+
+
+    //Query for finding flies with type other
+    @Query(value = "select * from pattern where type_fly not like 'wetFly' and type_fly not like 'salmonFly' and type_fly not like 'dryFly' and type_fly not like 'streamer' and type_fly not like 'nymph'", nativeQuery = true)
+    List<Pattern> findOther(@Param("keyword") String keyword);
 }

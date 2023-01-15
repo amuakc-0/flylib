@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-        
- 
+
+
+
     </head>
     <body>
         <nav class="main-nav">
@@ -20,9 +20,9 @@
             <label class="main-menu-btn" for="main-menu-state">
               <span class="main-menu-btn-icon"></span> Toggle main menu visibility
             </label>
-          
+
             <h2 class="nav-brand"><a href="#">The Fly Pattern Lib</a></h2>
-          
+
             <!-- menu definition -->
             <ul id="main-menu" class="sm sm-simple">
               <li><a href="index.html">Home</a></li>
@@ -32,12 +32,12 @@
               <li><a href="gallery.html">Gallery</a></li>
               </ul>
           </nav>
-          
+
           <div class="demo-text">
             <p>Browse through all patterns in the library:</p>
-           
-              
-                <label for="flyType">Select fly type: </label>
+
+
+                <b>Select fly type:</b>
                  <select name="flyType" id="flyTypeSelector">
                   <option selected="selected" value="all">Show all</option>
                   <option value="dryFly">Dry flies</option>
@@ -45,6 +45,7 @@
                   <option value="salmonFly">Salmon flies</option>
                   <option value="streamer">Streamers</option>
                   <option value="nymph">Nymphs</option>
+                  <option value="other">Other</option>
                  </select>
              <div class="panel-group" id="accordion">
             <div id="patternDiv0">
@@ -56,8 +57,7 @@
                   </h4>
                 </div>
                 <div id="collapse0" class="panel-collapse collapse" name="collapsePanel0">
-                    <div class="panel-body"  name="contentBody">
-                      <img id="patternImage0" src=""><br> 
+                    <div class="panel-body" id="panel-body">
                       Pattern name: <p id="patternName0">name</p>
                       Hook type: <p id="hookType0">hook type</p>
                      Tying instruction: <p id="tyingInstruction0">tying instruction</p>
@@ -70,7 +70,7 @@
 
             </div>
           </div>
-        </div> 
+        </div>
           <script src="jquery.smartmenus.js"></script>
           <script src="listScript.js"></script>
     </body>

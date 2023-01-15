@@ -267,3 +267,9 @@ div.label {
   content: "\a";
   white-space: pre
 }
+
+/* Style for images */
+#patternImage{
+  width: 10em;
+  height: 10em;
+}

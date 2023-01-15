@@ -100,4 +100,13 @@ public class PatternController {
         return ResponseEntity.ok("File uploaded successfully.");
     }
 
+    //Endpoint for findbymaterial
+    @RequestMapping(value = "/findother", method = RequestMethod.GET)
+    public @ResponseBody List<Pattern> findOther(@RequestParam String keyword) {
+        List<Pattern> patternOther = patternRepo.findOther(keyword);
+
+        return patternOther;
+
+    }
+
 }
